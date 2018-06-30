@@ -546,6 +546,7 @@ function withfig(actions::Function, f::Figure; clear=true)
     finally
         try
             sca(ax_save) # may fail if axes were overwritten
+        catch
         end
         Main.IJulia.undisplay(f)
     end
